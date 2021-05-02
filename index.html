@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dycalendar.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Calendar</title>
+</head>
+<body>
+
+  <section class="section">
+    <div class="container-radio">
+      <div class="btn-radio">
+        <input type="radio" name="1" id="month" value="month" checked>
+        <label for="month">Calendar month</label>
+      </div>
+      <div class="btn-radio">
+        <input type="radio" name="1" id="days" value="days">
+        <label for="days">Actual date</label>
+      </div>
+    </div>
+    <div class="box">
+      <div class="container" data-tilt>
+        <div id="dycalendar" ></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Java Script -->
+  <!-- hacer una casilla para poder cambiar entre "type: 'month'" -->
+  <script src="dycalendar.js"></script>
+  <script type="text/javascript" src="vanilla-tilt.min.js"></script>
+  <script>
+    const month = document.getElementById('month');
+    const day = document.getElementById('days');
+    let model = 'month'
+    dycalendar.draw({
+      target: '#dycalendar',
+      type: model,
+      dayformat: 'full',
+      monthformat: 'full',
+      highlighttargetdate: true,
+      prevnextbutton: 'show'
+    })
+    day.addEventListener('click', event => {
+      model = 'day';
+      dycalendar.draw({
+        target: '#dycalendar',
+        type: model
+      })
+    })
+    month.addEventListener('click', event => {
+      model = 'month';
+      dycalendar.draw({
+        target: '#dycalendar',
+        type: model,
+        prevnextbutton: 'show' 
+      })
+    })
+  </script>
+</body>
+</html>

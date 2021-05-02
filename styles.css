@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;800&display=swap');
+:root{
+  --background: #161623;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sora', sans-serif;
+  background-color: var(--background);
+  color: white;
+}
+.container-radio {
+  position: absolute;
+  z-index: 100;
+  display: inline-block;
+  transform: translate(300px, -150px);
+}
+.btn-radio {
+  margin: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba( 255, 255, 255, 0.2);
+  /* box-shadow: 0 0 6px 1px #ffffff1f; */
+  transition: 1s;
+}
+.btn-radio:hover {
+  /* background: rgb(216, 216, 216); */
+  transform: scale(1.05);
+}
+.section {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.section::after {
+  content: '';
+  position: absolute; 
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(219.46deg, #110036 27.63%, #170059 100%), linear-gradient(219.46deg, #FFFFFF 27.63%, #19004E 100%), radial-gradient(100% 246.94% at 100% 100%, #FFFFFF 0%, #000353 100%), linear-gradient(121.18deg, #1400FF 0.45%, #3A0000 100%), linear-gradient(337.69deg, #DC52FF 8.44%, #00BDBD 84.19%), linear-gradient(222.34deg, #FFFFFF 12.99%, #008171 87.21%), linear-gradient(150.76deg, #0015D5 15.35%, #000B6C 89.57%);
+  background-blend-mode: screen, overlay, overlay, difference, difference, difference, normal;  
+  /* background: linear-gradient(193deg, rgba(211,221,24,1) 0%, rgba(53,187,202,1) 100%); */
+  border-radius: 50%;
+  transform: translate(-250px, -150px);
+}
+.section::before {
+  content: '';
+  position: absolute; 
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(180deg, #F7D6FF 0%, #005686 100%), linear-gradient(180deg, #FFFFFF 0%, #060046 100%), linear-gradient(127.43deg, #FF0099 0%, #1A003C 100%), linear-gradient(307.27deg, #FF0000 0.37%, #3300C6 100%), radial-gradient(50% 71.96% at 50% 50%, #004584 0%, #00FFB2 100%), radial-gradient(100% 140% at 100% 0%, #5ED500 0%, #2200AA 100%);
+  background-blend-mode: soft-light, overlay, difference, difference, color-burn, normal;
+  /* background: linear-gradient(193deg, rgba(254,122,21,1) 0%, rgba(248,217,15,1) 100%); */
+  border-radius: 50%;
+  transform: translate(200px, 100px);
+}
+.box {
+  position: relative;
+  z-index: 100;
+}
+.container {
+  position: inherit;
+  width: 400px;
+  min-height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2) ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#dycalendar {
+  width: 100%;
+  padding: 20px;  
+}
+#dycalendar table {
+  width: 100%;
+  margin-top: 40px;
+  border-spacing: 5px;
+}
+
+#dycalendar table tr:nth-child(1) td {
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 16px 2px rgba( 0, 0, 0, 0.2);
+  color: #f1f1f1;
+}
+#dycalendar table tr:nth-child(1) td:hover, #dycalendar table td:hover {
+  animation: contrail 1s forwards;
+  
+}
+
+#dycalendar table td {
+  cursor: pointer;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+.dycalendar-span-month-year {
+  color: white; 
+}
+.dycalendar-target-date {
+  color: #111 !important;
+}
+.dycalendar-month-container .dycalendar-header .dycalendar-prev-next-btn {
+  font-weight: 400;
+  font-size: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 16px 2px rgba( 0, 0, 0, 0.2);
+  color: #f1f1f1;
+  transition: .8s;
+}
+.prev-btn:hover, .next-btn:hover {
+  transform: scale(1.1);
+}
+@keyframes contrail{
+  0%{
+    background: #e7e7e7;
+    color: #aaa5a5;
+  }
+  50%{
+    color: #414141;
+  }
+  100%{
+    color: #161623;
+    background: #fff;
+  }
+}
